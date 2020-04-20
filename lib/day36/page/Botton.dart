@@ -45,7 +45,7 @@ class ButtonDemoPage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Container(
+          Container(//通过外套Container来调整按钮宽高
             height: 100,
             width: 100,
             child: RaisedButton(
@@ -64,7 +64,7 @@ class ButtonDemoPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Expanded(
+              Expanded(//通过外套Container与Expanded来自适应调整按钮宽高
                 child: Container(
                   height: 60,
                   margin: EdgeInsets.all(10),
@@ -199,7 +199,7 @@ class ButtonDemoPage extends StatelessWidget {
                   ),
                   MyButton(
                     text: "自定义按钮",
-                    heigh: 60,
+                    height: 60,
                     width: 100,
                     pressed: () {
                       print("自定义按钮");
@@ -219,14 +219,14 @@ class MyButton extends StatelessWidget {
   final String text;
   final Function pressed;
   final double width;
-  final double heigh;
+  final double height;
 
-  MyButton({this.text: "", this.pressed, this.width: 80, this.heigh: 30});
+  MyButton({this.text: "", this.pressed, this.width: 80, this.height: 30});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: this.heigh,
+      height: this.height,
       width: this.width,
       child: RaisedButton(
         child: Text(this.text),
